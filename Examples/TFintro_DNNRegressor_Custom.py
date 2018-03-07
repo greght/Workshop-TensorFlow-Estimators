@@ -111,8 +111,7 @@ if __name__ == '__main__':
     x1 = x_predict[:,0].reshape(25,-1)
     x2 = x_predict[:,1].reshape(25,-1)
     y1 = y_predict.reshape(25,-1)
-    ax.scatter(features[:,0], features[:,1], labels, c='r', marker='o', label='Actual');
-    plt.hold(True);
+    ax.scatter(features[:,0], features[:,1], labels, c='r', marker='o', label='Actual')
     ax.plot_surface(x1,x2,y1,cmap=cm.coolwarm,linewidth=0,rstride=1,cstride=1)
 
     ax.set_xlabel('x')

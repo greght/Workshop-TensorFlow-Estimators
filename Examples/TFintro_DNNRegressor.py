@@ -85,8 +85,8 @@ ax.scatter(features[:,0], features[:,1], labels, c='r', marker='o', label='Actua
 plt.hold(True);
 ax.plot_surface(x1,x2,y1,cmap=cm.coolwarm,linewidth=0,rstride=1,cstride=1)
 
-ax.set_xlabel('a/b')
-ax.set_ylabel('c/b')
-ax.set_zlabel('Energy')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('f(x,y)')
 
 plt.show()

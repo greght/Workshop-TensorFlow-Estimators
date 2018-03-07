@@ -91,7 +91,7 @@ if __name__ == '__main__':
                                                         num_epochs=1,
                                                         shuffle=False)
     loss = dnn.evaluate(input_fn=valid_input_fn)["loss"]
-    print loss
+    print(loss)
 
     # Create a prediction set
     x_min = np.amin(features,axis=0)

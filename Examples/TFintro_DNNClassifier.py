@@ -64,7 +64,7 @@ valid_input_fn = tf.estimator.inputs.numpy_input_fn(x={"x": featuresValid},
                                                     num_epochs=1,
                                                     shuffle=False)
 accuracy_score = dnn.evaluate(input_fn=valid_input_fn)["accuracy"]
-print "Accuracy: ", accuracy_score
+print("Accuracy: ", accuracy_score)
 
 # Classify two new flower samples.
 new_samples = np.array([[6.4, 3.2, 4.5, 1.5],
@@ -76,4 +76,4 @@ predict_input_fn = tf.estimator.inputs.numpy_input_fn(x={"x": new_samples},
 predictions = dnn.predict(input_fn=predict_input_fn)
 predicted_classes = [p["classes"] for p in predictions]
 
-print "New Samples, Class Predictions: ", predicted_classes
+print("New Samples, Class Predictions: ", predicted_classes)

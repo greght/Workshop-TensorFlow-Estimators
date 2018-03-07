@@ -115,4 +115,4 @@ if __name__ == '__main__':
                                                         shuffle=False)
     
     accuracy = dnn.evaluate(input_fn=valid_input_fn)["accuracy"]
-    print "Accuracy: ", accuracy
+    print("Accuracy: ", accuracy)

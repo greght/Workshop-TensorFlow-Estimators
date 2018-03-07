@@ -66,7 +66,8 @@ print(loss)
 # Create a prediction set
 x_min = np.amin(features,axis=0)
 x_max = np.amax(features,axis=0)
-x_predict = np.mgrid[x_min[0]:x_max[0]:25j, x_min[1]:x_max[1]:25j].reshape(2,-1).T
+x_predict = np.mgrid[x_min[0]:x_max[0]:25j,
+                     x_min[1]:x_max[1]:25j].reshape(2,-1).T
 
 predict_input_fn = tf.estimator.inputs.numpy_input_fn(x={"x": x_predict},
                                                       num_epochs=1,

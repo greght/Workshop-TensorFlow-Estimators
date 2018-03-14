@@ -1,3 +1,5 @@
 *~
 .DS_Store
 graph*
+iris_test.csv
+iris_training.csv

@@ -14,19 +14,30 @@
 
 import numpy as np
 import tensorflow as tf
-import shutil
+import shutil, os
+from six.moves.urllib.request import urlopen
 
 tf.logging.set_verbosity(tf.logging.INFO)
 
-# Read in data
+# Read in data, download first if necessary
+if not os.path.exists("iris_training.csv"):
+    raw = urlopen("http://download.tensorflow.org/data/iris_training.csv").read()
+    with open("iris_training.csv", "wb") as f:
+        f.write(raw)
+      
+if not os.path.exists("iris_test.csv"):
+    raw = urlopen("http://download.tensorflow.org/data/iris_test.csv").read()
+    with open("iris_test.csv", "wb") as f:
+        f.write(raw)
+
 training_set = tf.contrib.learn.datasets.base.load_csv_with_header(
-  filename="iris_training.csv",
-  target_dtype=np.int,
-  features_dtype=np.float32)
+    filename="iris_training.csv",
+    target_dtype=np.int,
+    features_dtype=np.float32)
 valid_set = tf.contrib.learn.datasets.base.load_csv_with_header(
-  filename="iris_test.csv",
-  target_dtype=np.int,
-  features_dtype=np.float32)
+    filename="iris_test.csv",
+    target_dtype=np.int,
+    features_dtype=np.float32)
 features = np.array(training_set.data)
 labels = np.array(training_set.target)
 

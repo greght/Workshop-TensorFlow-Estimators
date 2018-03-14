@@ -37,9 +37,9 @@ optimizer=tf.train.AdagradOptimizer(learning_rate=0.1)
 # Get DNN
 feature_columns = [tf.feature_column.numeric_column("x", shape=[2])]
 dnn = tf.estimator.DNNRegressor(feature_columns=feature_columns,
-                                      hidden_units=[50,130,25],
-                                      model_dir=model_dir,
-                                      optimizer=optimizer)
+                                hidden_units=[50,130,25],
+                                model_dir=model_dir,
+                                optimizer=optimizer)
 
 # Fit (train) model
 batch_size=10

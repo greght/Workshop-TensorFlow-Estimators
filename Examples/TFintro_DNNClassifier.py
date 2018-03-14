@@ -78,9 +78,9 @@ accuracy_score = dnn.evaluate(input_fn=valid_input_fn)["accuracy"]
 print("Accuracy: ", accuracy_score)
 
 # Classify two new flower samples.
-new_samples = np.array([[6.4, 3.2, 4.5, 1.5],
-                        [5.8, 3.1, 5.0, 1.7]], dtype=np.float32)
-predict_input_fn = tf.estimator.inputs.numpy_input_fn(x={"x": new_samples},
+x_predict = np.array([[6.4, 3.2, 4.5, 1.5],
+                      [5.8, 3.1, 5.0, 1.7]], dtype=np.float32)
+predict_input_fn = tf.estimator.inputs.numpy_input_fn(x={"x": x_predict},
                                                       num_epochs=1,
                                                       shuffle=False)
 
